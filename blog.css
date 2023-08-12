@@ -162,8 +162,10 @@ select {
 
   .blog .blog-card{
     width: 80%;
+    height: auto;
     margin-right: auto;
     margin-left: auto;
+    margin-bottom: auto;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 10px;
@@ -177,15 +179,19 @@ select {
   }
   .blog .blog-card .card-item{
     border-radius: 5px;
-    height: auto;
     box-shadow: 0 0 2px 0;
     padding: 10px;
+    height: 100%;
   }
   .blog .blog-card .card-item .blog-image img{
     border-radius: 5px;
   }
   .blog .blog-card .card-item .blog-content{
     justify-content: left;
+  }
+  .blog .blog-card .card-item .blog-content .application{
+    height: 15px;
+    margin: 10px auto;
   }
   .blog .blog-card .card-item .blog-content .blog-details{
     font-weight: 300;
