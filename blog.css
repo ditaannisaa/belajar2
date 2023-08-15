@@ -248,7 +248,6 @@ select {
     width: 100%;
 }
 .details-info{
-    margin: 10px 0 0;
     flex: 40%;
 }
 .details-info .technology{
@@ -297,10 +296,7 @@ select {
 @media only screen and (max-width : 480px){
     .blog-form .form-container{
         width: 80%;
-    }
-    .item-collapse{
-        display: none;
-    }
+    } 
     .blog .blog-card{
         grid-template-columns: 1fr 1fr;
     }
@@ -310,8 +306,13 @@ select {
     .blog-image img{
         height: 200px;
       }
+
     #barsmenu{
         display: block;
     }
-
-}
+    .item-collapse{
+        display: none;
+    }
+    .blog-detail .first-blog-detail{
+        flex-direction: column;
+    }
