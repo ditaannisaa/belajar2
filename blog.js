@@ -26,12 +26,6 @@ function addBlog(event) {
   let year = Math.floor(month / 12);
   let durasi = "";
 
-  // console.log(difference)
-  // console.log(day)
-  // console.log(week)
-  // console.log(month)
-  // console.log(year)
-
   if (day > 0){
     durasi = day + " hari";
   } 
@@ -44,20 +38,14 @@ function addBlog(event) {
   if (year > 0){
     durasi = year + " tahun";
   } 
-  // console.log(durasi)
-
-  let nodeJsLogo = nodeJs;
-  let reactJsLogo = reactJs;
-  let nextJsLogo = nextJs;
-  let typescriptLogo = typescript;
 
   let blog = {
     project,
     description,
-    reactJsLogo,
-    nodeJsLogo,
-    nextJsLogo,
-    typescriptLogo,
+    reactJs,
+    nodeJs,
+    nextJs,
+    typescript,
     image,
     durasi,
   };
@@ -66,11 +54,6 @@ function addBlog(event) {
   console.log(dataBlog);
 
  renderBlog();
- 
- document.getElementById("react").hidden = !reactJs;      
- document.getElementById("node").hidden = !nodeJs;
- document.getElementById("next").hidden = !nextJs;
- document.getElementById("type").hidden = !typescript;
 
  document.getElementById("form-blog").reset();
 }
@@ -80,15 +63,18 @@ function renderBlog() {
 
   for (let index = 0; index < dataBlog.length; index++) {
     console.log(dataBlog[index]);
-    
+    var reactId = "react"+index;
+    var nodeId = "node"+index;
+    var nextId = "next"+index;
+    var typeId = "type"+index;
     document.getElementById("contents").innerHTML += `
               <div class="card-item">
                     <div class="blog-image">
-                        <img src="${dataBlog[index].image}" alt="image">
+                        <img src="${dataBlog[index].image}" alt="" style="width: 100%; height: 50%;">
                     </div>
                     <div class="blog-content">
                         <h4 style="height: fit-content;">
-                            <a href="blog-details.html">${dataBlog[index].project}</a>
+                            <a href=''>${dataBlog[index].project}</a>
                         </h4>
                         <div class="blog-details">
                         durasi : ${dataBlog[index].durasi}
@@ -99,10 +85,10 @@ function renderBlog() {
                         </p>
                         </div>
                         <div class="application">
-                            <img src="icons8-react-js.svg" id="react" style="height: 15px; width: 15px;" hidden>
-                            <img src="icons8-nodejs.svg" id="node" style="height: 15px; width: 15px;" hidden>
-                            <img src="next-js.svg" alt="" id="next" style="height: 15px; width: 15px;" hidden>
-                            <img src="icons8-typescript.svg" alt="" id="type" style="height: 15px; width: 15px;" hidden>
+                            <img src="icons8-react-js.svg" id="${reactId}" style="height: 15px; width: 15px;" hidden>
+                            <img src="icons8-nodejs.svg" id="${nodeId}" style="height: 15px; width: 15px;" hidden>
+                            <img src="next-js.svg" alt="" id="${nextId}" style="height: 15px; width: 15px;" hidden>
+                            <img src="icons8-typescript.svg" alt="" id="${typeId}" style="height: 15px; width: 15px;" hidden>
                         </div>
                         <div class="btn-group" >
                             <button class="btn-edit" >Edit</button>
@@ -110,23 +96,13 @@ function renderBlog() {
                         </div>
                     </div>
               </div>
-                ` 
-    
+                ` ;
+  
+
+  document.getElementById(reactId).hidden = !dataBlog[index].reactJs;      
+  document.getElementById(nodeId).hidden = !dataBlog[index].nodeJs;
+  document.getElementById(nextId).hidden = !dataBlog[index].nextJs;
+  document.getElementById(typeId).hidden = !dataBlog[index].typescript;
   } 
  
-}
-
-let hamburgerIsOpen = false;
-
-const openHamburger = () =>{
-  let hamburgerNavCon = document.getElementById("hamburger-nav-container") ;
-
-  if (!hamburgerIsOpen) {
-    hamburgerNavCon.style.display = "block";
-    hamburgerIsOpen = true
-  }
-    else {
-      hamburgerNavCon.style.display = "none";
-      hamburgerIsOpen = false
-    }
 }
