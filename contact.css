@@ -1,7 +1,51 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 *{
-    font-family: "poppins", sans-serif
+    font-family: "poppins", sans-serif;
+    text-decoration: none;
+    color: black;
+}
+body{
+    margin: 0;
+}
+
+nav {
+    background-color: whitesmoke;
+    display: flex;
+    align-items: center;
+    height: 10vh;
+}
+
+nav ul{
+    display: flex;
+    list-style-type: none;
+    align-items: start;
+}
+
+nav ul li{
+    margin-right: 25px;
+    font-size: 18px;
+    color: black;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-left{
+    flex: 70%;
+}
+
+.nav-right{
+    flex: 30%;
+    text-align: end;
+    margin-right: 35px;
+    align-items: center;
+}
+
+.nav-right a{
+    background-color: black;
+    color: whitesmoke;
+    padding: 10px;
+    border-radius: 5px;
 }
 
 form{
@@ -36,4 +80,48 @@ button{
     border: 1px solid orange;
     width: 100%;
     margin: 4px auto;
+}
+
+#barsmenu{
+    display: none;
+}
+
+.hamburger-nav-container{
+    font-size: 20px;
+    list-style-type: none;
+    display: none;
+}
+
+.hamburger-nav-container a {
+  text-decoration: none;
+  color: #fff;
+  background-color: #9a9a9a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #fff;
+}
+
+.hamburger-nav-container .hamburger-active {
+    text-decoration: none;
+    color: #fff;
+    background-color: orangered;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #fff;
+  }
+
+@media only screen and (max-width : 480px){
+    .item-collapse{
+        display: none;
+    }
+    #barsmenu{
+        display: block;
+    }
+    .nav-right{
+        margin-right: 0;
+    }
 }

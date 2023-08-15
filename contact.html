@@ -1,39 +1,47 @@
 <html>
     <head>
         <link rel="stylesheet" href="contact.css">
+        <link rel="stylesheet" 
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" 
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" 
+        crossorigin="anonymous" 
+        referrerpolicy="no-referrer" />
     </head>
     <body>
-        <div>
-            <Head>
-                <title>My Web</title>
-                <link rel="stylesheet" href="style.css"/>
-            </Head>
-            <Body>
                 <nav>
-                  <div class="nav-left">
-                <ul>
-                    <li>
-                        <img src="logo.png" alt="logo"/>
-                    </li>
-                    <li>
-                        <a href="index.html">Home</a>
-                    </li>
-                    <li>
-                        <a href="blog.html">My Project</a>
-                    </li>
-                </ul>
-                  </div> 
-                  <div class="nav-right">
-                    <a href="contact.html">Contact Me</a>
-                  </div> 
+                    <div class="nav-left">
+                  <ul>
+                      <li>
+                          <img src="logo.png" alt="logo"/>
+                      </li>
+                      <li class="item-collapse">
+                          <a href="index.html">Home</a>
+                      </li>
+                      <li class="item-collapse">
+                          <a href="blog.html" >My Project</a>
+                      </li>
+                  </ul>
+                    </div> 
+                    <div class="nav-right item-collapse">
+                      <a href="contact.html" class="active" >Contact Me</a>
+                    </div> 
+                    <div class="nav-right" id="barsmenu">
+                      <button style="background-color: transparent; border: none; cursor: pointer;" onclick="openHamburger()">
+                          <i class="fa-2x fa-solid fa-bars"></i>
+                      </button>
+                    </div>
                 </nav>
+      
+                  <div class="hamburger-nav-container" id="hamburger-nav-container">
+                      <a href="index.html">Home</a>
+                      <a href="blog.html" >My Project</a>
+                      <a href="contact.html" class="hamburger-active">Contact Me</a>
+                  </div>
                 
-            </Body>
-        </div>
         <form>
             <div style="width: 350px; margin: 20px auto; text-align: center; font-weight: 1000; ">
             GET IN TOUCH
-        </div>
+            </div>
 
             <div>
                 <label for="input-Name">Name</label>

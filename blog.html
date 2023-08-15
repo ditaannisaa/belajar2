@@ -10,26 +10,36 @@
         referrerpolicy="no-referrer" />
     </head>
     <body>
-        <Body>
             <nav>
               <div class="nav-left">
             <ul>
                 <li>
                     <img src="logo.png" alt="logo"/>
                 </li>
-                <li>
+                <li class="item-collapse">
                     <a href="index.html">Home</a>
                 </li>
-                <li>
-                    <a href="blog.html">My Project</a>
+                <li class="item-collapse">
+                    <a href="blog.html" class="active">My Project</a>
                 </li>
             </ul>
               </div> 
-              <div class="nav-right">
+              <div class="nav-right item-collapse">
                 <a href="contact.html">Contact Me</a>
               </div> 
+              <div class="nav-right" id="barsmenu">
+                <button style="background-color: transparent; border: none; cursor: pointer;" onclick="openHamburger()">
+                    <i class="fa-2x fa-solid fa-bars"></i>
+                </button>
+              </div>
             </nav>
-        </Body>
+
+            <div class="hamburger-nav-container" id="hamburger-nav-container">
+                <a href="index.html">Home</a>
+                <a href="blog.html" class="hamburger-active">My Project</a>
+                <a href="contact.html">Contact Me</a>
+            </div>
+       
 
         <div class="blog">
             <div class="blog-form">
@@ -41,11 +51,11 @@
                             <input id="input-project-name"/>
                         </div>
                         <div class="start-end-date">
-                            <div>
+                            <div class="startdate">
                                 <label for="input-start-date">Start Date</label>
                                 <input type="date" id="input-start-date"/>
                             </div>
-                            <div>
+                            <div class="enddate">
                                 <label for="input-end-date">End Date</label>
                                 <input type="date" id="input-end-date"/>
                             </div>
@@ -107,7 +117,7 @@
             <div id="contents" class="blog-card">
                 <div class="card-item">
                     <div class="blog-image">
-                        <img src="neom-hgf0fJGJPQs-unsplash.jpg" alt="image" style="width: 100%;height: 50%;">
+                        <img src="neom-hgf0fJGJPQs-unsplash.jpg" alt="image">
                     </div>
                     <div class="blog-content">
                         <h4 style="height: fit-content;">
@@ -119,8 +129,7 @@
                         <div>
                         <p style="font-size: 12px; font-weight: 400; text-align: justify;">
                             App that used for dumbways student. 
-                            It was deployed and can downloaded at playstore. 
-                            Happy download
+                            It was deployed and can downloaded at playstore. Happy download
                         </p>
                         </div>
                         <div class="application">

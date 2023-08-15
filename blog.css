@@ -30,6 +30,10 @@ nav ul li{
     justify-content: center;
 }
 
+nav ul li .active{
+    color: orangered;
+}
+
 .nav-left{
     flex: 70%;
 }
@@ -78,7 +82,6 @@ section{
 }
 .blog-form .form-container{
     width: 500px;
-    margin: 20px;
 }
 .blog-form .form-container h1 {
     text-align: center;
@@ -104,11 +107,13 @@ select {
 }
 .blog-form form .start-end-date{
     display: flex;
-    width: 100%;
     gap: 10px;
 }
-.blog-form form .start-end-date input{
-    width: 100%;
+.blog-form form .start-end-date .startdate{
+    flex: 50%;
+}
+.blog-form form .start-end-date .enddate{
+    flex: 50%;
 }
 .blog-form form .input-checkbox{
     display: flex;
@@ -162,10 +167,10 @@ select {
 
   .blog .blog-card{
     width: 80%;
-    height: auto;
+    padding: 15px;
     margin-right: auto;
     margin-left: auto;
-    margin-bottom: auto;
+    margin-bottom: 20px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 10px;
@@ -181,46 +186,48 @@ select {
     border-radius: 5px;
     box-shadow: 0 0 2px 0;
     padding: 10px;
-    height: 100%;
+    height:max-content
   }
-  .blog .blog-card .card-item .blog-image img{
+   .blog-image img{
     border-radius: 5px;
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
   }
-  .blog .blog-card .card-item .blog-content{
-    justify-content: left;
-  }
-  .blog .blog-card .card-item .blog-content .application{
+  
+  .blog-content .application{
     height: 15px;
     margin: 10px auto;
   }
-  .blog .blog-card .card-item .blog-content .blog-details{
+ .blog-content .blog-details{
     font-weight: 300;
     font-size: 12px;
     line-height: 20px;
   }
-  .blog .blog-card .card-item .blog-content .blog-details p{
+  .blog-details p{
     font-weight: 400;
     font-size: 12px;
   }
-  .blog .blog-card .card-item .blog-content .btn-group{
+  .btn-group{
     display: flex;
     gap:10px ;
     color: white;
   }
-  .blog .blog-card .card-item .blog-content .btn-group button{
+   .btn-group button{
     background-color: black;
     color: white;
     border-radius: 5px;
   }
-  .blog .blog-card .card-item .blog-content .btn-group button:hover{
+    .btn-group button:hover{
     background-color: orangered;
   }
-  .blog .blog-card .card-item .blog-content .btn-group .btn-edit{
+  .btn-group .btn-edit{
     flex: 50%;
 }
-.blog .blog-card .card-item .blog-content .btn-group .btn-delete{
+  .btn-group .btn-delete{
     flex: 50%;
 }
+/*blog-content-detail*/
 .blog-detail{
     margin: 20px;
     padding: auto;
@@ -233,25 +240,78 @@ select {
     display: flex ;
     gap: 30px;
 }
-.blog-detail .first-blog-detail .details-img{
+.first-blog-detail .details-img{
     flex: 60%;
     margin: 10px 0 0;
 }
-.blog-detail .first-blog-detail .details-img img{
+.details-img img{
     width: 100%;
 }
-.blog-detail .first-blog-detail .details-info{
+.details-info{
     margin: 10px 0 0;
     flex: 40%;
 }
-.blog-detail .first-blog-detail .details-info .technology{
+.details-info .technology{
     display: flex;
 }
-.blog-detail .first-blog-detail .details-info .technology .technology-left{
+.technology .technology-left{
     flex: 50%;
     justify-content: center;
 }
-.blog-detail .first-blog-detail .details-info .technology .technology-right{
+.technology .technology-right{
     flex: 50%;
 }
 
+#barsmenu{
+    display: none;
+}
+
+.hamburger-nav-container{
+    font-size: 20px;
+    list-style-type: none;
+    display: none;
+}
+
+.hamburger-nav-container a {
+  text-decoration: none;
+  color: #fff;
+  background-color: #9a9a9a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #fff;
+}
+
+.hamburger-nav-container .hamburger-active {
+    text-decoration: none;
+    color: #fff;
+    background-color: orangered;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #fff;
+  }
+
+@media only screen and (max-width : 480px){
+    .blog-form .form-container{
+        width: 80%;
+    }
+    .item-collapse{
+        display: none;
+    }
+    .blog .blog-card{
+        grid-template-columns: 1fr 1fr;
+    }
+    .blog-form form .start-end-date{
+        flex-direction: column;
+    }
+    .blog-image img{
+        height: 200px;
+      }
+    #barsmenu{
+        display: block;
+    }
+
+}

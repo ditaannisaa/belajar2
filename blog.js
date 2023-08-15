@@ -84,7 +84,7 @@ function renderBlog() {
     document.getElementById("contents").innerHTML += `
               <div class="card-item">
                     <div class="blog-image">
-                        <img src="${dataBlog[index].image}" alt="" style="width: 100%; height: 50%;">
+                        <img src="${dataBlog[index].image}" alt="image">
                     </div>
                     <div class="blog-content">
                         <h4 style="height: fit-content;">
@@ -114,4 +114,19 @@ function renderBlog() {
     
   } 
  
+}
+
+let hamburgerIsOpen = false;
+
+const openHamburger = () =>{
+  let hamburgerNavCon = document.getElementById("hamburger-nav-container") ;
+
+  if (!hamburgerIsOpen) {
+    hamburgerNavCon.style.display = "block";
+    hamburgerIsOpen = true
+  }
+    else {
+      hamburgerNavCon.style.display = "none";
+      hamburgerIsOpen = false
+    }
 }
