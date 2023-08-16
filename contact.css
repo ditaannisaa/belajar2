@@ -124,4 +124,7 @@ button{
     .nav-right{
         margin-right: 0;
     }
+    form {
+        margin: 10px;
+    }
 }
